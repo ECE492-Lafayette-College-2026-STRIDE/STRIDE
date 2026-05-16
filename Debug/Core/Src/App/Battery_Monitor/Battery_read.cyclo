@@ -1,0 +1,5 @@
+../Core/Src/App/Battery_Monitor/Battery_read.cpp:16:16:int _write(int, char*, int)	1
+../Core/Src/App/Battery_Monitor/Battery_read.cpp:28:6:static void battery::BatteryStatusLTC2944::batteryInit()	5
+../Core/Src/App/Battery_Monitor/Battery_read.cpp:68:6:static bool battery::BatteryStatusLTC2944::tick_read(Measurements&)	6
+../Core/Src/App/Battery_Monitor/Battery_read.cpp:127:1:void __static_initialization_and_destruction_0()	1
+../Core/Src/App/Battery_Monitor/Battery_read.cpp:127:1:cpp)	1

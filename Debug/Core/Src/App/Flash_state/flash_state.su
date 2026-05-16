@@ -1,0 +1,8 @@
+C:\ST\STM32CubeIDE_1.19.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344\tools\bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/include/c++/13.3.1/cmath:234:3:constexpr float std::fabs(float)	16	static
+../Core/Src/App/Flash_state/flash_state.cpp:28:6:static bool flash_state::FlashState::init()	8	static
+../Core/Src/App/Flash_state/flash_state.cpp:33:6:static bool flash_state::FlashState::loadBatteryCapacityToSystemState()	56	static
+../Core/Src/App/Flash_state/flash_state.cpp:58:6:static bool flash_state::FlashState::tick()	72	static
+../Core/Src/App/Flash_state/flash_state.cpp:90:6:static bool flash_state::FlashState::readRecord(BatteryFlashRecord&)	16	static
+../Core/Src/App/Flash_state/flash_state.cpp:101:6:static bool flash_state::FlashState::writeRecord(BatteryFlashRecord)	112	static
+../Core/Src/App/Flash_state/flash_state.cpp:138:6:static bool flash_state::FlashState::isValid(const BatteryFlashRecord&)	24	static
+../Core/Src/App/Flash_state/flash_state.cpp:159:15:static uint32_t flash_state::FlashState::checksum(const BatteryFlashRecord&)	56	static

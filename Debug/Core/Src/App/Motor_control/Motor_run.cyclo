@@ -1,0 +1,4 @@
+../Core/Src/App/Motor_control/Motor_run.cpp:20:6:static void motors::Motors::initRunner()	1
+../Core/Src/App/Motor_control/Motor_run.cpp:41:6:static void motors::Motors::tick_Motors()	2
+../Core/Src/App/Motor_control/Motor_run.cpp:78:1:void __static_initialization_and_destruction_0()	1
+../Core/Src/App/Motor_control/Motor_run.cpp:78:1:cpp)	1

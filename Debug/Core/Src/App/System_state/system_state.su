@@ -1,0 +1,16 @@
+../Core/Src/App/System_state/system_state.cpp:19:6:static void system_state::SystemState::init()	104	static
+../Core/Src/App/System_state/system_state.cpp:29:6:static void system_state::SystemState::setMotorCommand(const system_state::MotorCommand&)	24	static
+../Core/Src/App/System_state/system_state.cpp:34:14:static system_state::MotorCommand system_state::SystemState::getMotorCommand()	24	static
+../Core/Src/App/System_state/system_state.cpp:39:6:static void system_state::SystemState::setMotorFeedback(const system_state::MotorFeedback&)	16	static
+../Core/Src/App/System_state/system_state.cpp:44:15:static system_state::MotorFeedback system_state::SystemState::getMotorFeedback()	16	static
+../Core/Src/App/System_state/system_state.cpp:49:6:static void system_state::SystemState::setBatteryState(const system_state::BatteryState&)	24	static
+../Core/Src/App/System_state/system_state.cpp:54:14:static system_state::BatteryState system_state::SystemState::getBatteryState()	24	static
+../Core/Src/App/System_state/system_state.cpp:59:6:static void system_state::SystemState::setSensorState(const system_state::SensorState&)	16	static
+../Core/Src/App/System_state/system_state.cpp:64:13:static system_state::SensorState system_state::SystemState::getSensorState()	16	static
+../Core/Src/App/System_state/system_state.cpp:69:6:static void system_state::SystemState::setUserInputState(const system_state::UserInputState&)	16	static
+../Core/Src/App/System_state/system_state.cpp:74:16:static system_state::UserInputState system_state::SystemState::getUserInputState()	16	static
+../Core/Src/App/System_state/system_state.cpp:79:6:static void system_state::SystemState::setJetsonState(const system_state::JetsonState&)	16	static
+../Core/Src/App/System_state/system_state.cpp:84:13:static system_state::JetsonState system_state::SystemState::getJetsonState()	16	static
+../Core/Src/App/System_state/system_state.cpp:89:6:static void system_state::SystemState::updateJetsonRxTick(uint32_t)	16	static
+../Core/Src/App/System_state/system_state.cpp:94:6:static void system_state::SystemState::updateJetsonTxTick(uint32_t)	16	static
+../Core/Src/App/System_state/system_state.cpp:99:6:static void system_state::SystemState::setJetsonConnected(bool)	16	static

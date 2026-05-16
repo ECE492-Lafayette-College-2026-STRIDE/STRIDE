@@ -1,0 +1,4 @@
+../Core/Src/App/User_brakes/user_brakes.cpp:17:6:static void user_brakes::UserBrakes::init()	1
+../Core/Src/App/User_brakes/user_brakes.cpp:22:6:static void user_brakes::UserBrakes::tick()	2
+../Core/Src/App/User_brakes/user_brakes.cpp:40:7:static float user_brakes::UserBrakes::readLeftBrake()	2
+../Core/Src/App/User_brakes/user_brakes.cpp:45:7:static float user_brakes::UserBrakes::readRightBrake()	2

@@ -1,0 +1,20 @@
+../Core/Src/App/Battery_Monitor/Battery_status.cpp:20:1:battery::BatteryStatusLTC2944::BatteryStatusLTC2944(I2C_HandleTypeDef*, float)	1
+../Core/Src/App/Battery_Monitor/Battery_status.cpp:27:6:bool battery::BatteryStatusLTC2944::init(AdcMode, Prescaler, AlccMode, bool)	2
+../Core/Src/App/Battery_Monitor/Battery_status.cpp:36:6:bool battery::BatteryStatusLTC2944::readStatus(uint8_t&, StatusBits&)	2
+../Core/Src/App/Battery_Monitor/Battery_status.cpp:43:6:bool battery::BatteryStatusLTC2944::readAll(Measurements&)	7
+../Core/Src/App/Battery_Monitor/Battery_status.cpp:86:6:bool battery::BatteryStatusLTC2944::readControl(uint8_t&)	1
+../Core/Src/App/Battery_Monitor/Battery_status.cpp:91:6:bool battery::BatteryStatusLTC2944::writeControl(uint8_t)	1
+../Core/Src/App/Battery_Monitor/Battery_status.cpp:95:6:bool battery::BatteryStatusLTC2944::write16(uint8_t, uint16_t)	1
+../Core/Src/App/Battery_Monitor/Battery_status.cpp:106:6:bool battery::BatteryStatusLTC2944::setAccumulatedCharge_mAh(float)	2
+../Core/Src/App/Battery_Monitor/Battery_status.cpp:115:6:bool battery::BatteryStatusLTC2944::configure(AdcMode, Prescaler, AlccMode, bool)	3
+../Core/Src/App/Battery_Monitor/Battery_status.cpp:132:10:uint16_t battery::BatteryStatusLTC2944::prescalerToM(Prescaler)	8
+../Core/Src/App/Battery_Monitor/Battery_status.cpp:147:7:float battery::BatteryStatusLTC2944::convertVoltage_V(uint16_t) const	1
+../Core/Src/App/Battery_Monitor/Battery_status.cpp:153:7:float battery::BatteryStatusLTC2944::convertCurrent_A(uint16_t) const	2
+../Core/Src/App/Battery_Monitor/Battery_status.cpp:164:7:float battery::BatteryStatusLTC2944::convertTemp_C(uint16_t) const	1
+../Core/Src/App/Battery_Monitor/Battery_status.cpp:171:7:float battery::BatteryStatusLTC2944::convertAcrTo_mAh(uint16_t, uint16_t) const	2
+../Core/Src/App/Battery_Monitor/Battery_status.cpp:184:6:bool battery::BatteryStatusLTC2944::read8(uint8_t, uint8_t&)	1
+../Core/Src/App/Battery_Monitor/Battery_status.cpp:190:6:bool battery::BatteryStatusLTC2944::read16(uint8_t, uint16_t&)	2
+../Core/Src/App/Battery_Monitor/Battery_status.cpp:202:6:bool battery::BatteryStatusLTC2944::write8(uint8_t, uint8_t)	1
+../Core/Src/App/Battery_Monitor/Battery_status.cpp:210:34:static battery::BatteryStatusLTC2944::StatusBits battery::BatteryStatusLTC2944::decodeStatus(uint8_t)	1
+../Core/Src/App/Battery_Monitor/Battery_status.cpp:223:6:bool battery::BatteryStatusLTC2944::setVoltageThresholds(float, float)	5
+../Core/Src/App/Battery_Monitor/Battery_status.cpp:239:6:bool battery::BatteryStatusLTC2944::setCurrentThresholds(float, float)	5

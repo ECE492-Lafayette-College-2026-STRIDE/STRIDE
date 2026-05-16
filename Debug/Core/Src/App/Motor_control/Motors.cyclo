@@ -1,0 +1,25 @@
+../Core/Src/App/Motor_control/Motors.cpp:9:29:uint32_t motors::dacChannelFor(Motors::Channel)	2
+../Core/Src/App/Motor_control/Motors.cpp:12:29:GPIO_TypeDef* motors::enablePortFor(Motors::Channel)	2
+../Core/Src/App/Motor_control/Motors.cpp:15:29:uint16_t motors::enablePinFor(Motors::Channel)	2
+../Core/Src/App/Motor_control/Motors.cpp:19:29:GPIO_TypeDef* motors::brakePortFor(Motors::Channel)	2
+../Core/Src/App/Motor_control/Motors.cpp:22:29:uint16_t motors::brakePinFor(Motors::Channel)	2
+../Core/Src/App/Motor_control/Motors.cpp:26:29:GPIO_TypeDef* motors::directionPortFor(Motors::Channel)	2
+../Core/Src/App/Motor_control/Motors.cpp:29:29:uint16_t motors::directionPinFor(Motors::Channel)	2
+../Core/Src/App/Motor_control/Motors.cpp:33:29:GPIO_TypeDef* motors::faultPortFor(Motors::Channel)	2
+../Core/Src/App/Motor_control/Motors.cpp:36:29:uint16_t motors::faultPinFor(Motors::Channel)	2
+../Core/Src/App/Motor_control/Motors.cpp:41:1:motors::Motors::Motors(Channel)	1
+../Core/Src/App/Motor_control/Motors.cpp:43:6:static bool motors::Motors::init()	5
+../Core/Src/App/Motor_control/Motors.cpp:53:15:static uint16_t motors::Motors::voltsToCode(float)	3
+../Core/Src/App/Motor_control/Motors.cpp:60:6:bool motors::Motors::writeRaw(uint16_t)	3
+../Core/Src/App/Motor_control/Motors.cpp:72:6:bool motors::Motors::writeMotor(float)	1
+../Core/Src/App/Motor_control/Motors.cpp:78:6:bool motors::Motors::setEnable(bool)	2
+../Core/Src/App/Motor_control/Motors.cpp:87:6:bool motors::Motors::setBrake(bool)	2
+../Core/Src/App/Motor_control/Motors.cpp:94:6:bool motors::Motors::setDirection(bool)	2
+../Core/Src/App/Motor_control/Motors.cpp:101:6:bool motors::Motors::readFault() const	1
+../Core/Src/App/Motor_control/Motors.cpp:109:7:float motors::Motors::speedToVolts(uint32_t) const	1
+../Core/Src/App/Motor_control/Motors.cpp:117:6:void motors::Motors::setSpeed(uint32_t)	1
+../Core/Src/App/Motor_control/Motors.cpp:122:15:uint32_t motors::Motors::commandedSpeedCached() const	1
+../Core/Src/App/Motor_control/Motors.cpp:123:6:bool motors::Motors::enableCached() const	1
+../Core/Src/App/Motor_control/Motors.cpp:124:6:bool motors::Motors::brakeCached() const	1
+../Core/Src/App/Motor_control/Motors.cpp:125:6:bool motors::Motors::directionCached() const	1
+../Core/Src/App/Motor_control/Motors.cpp:126:6:bool motors::Motors::faultCached() const	1
