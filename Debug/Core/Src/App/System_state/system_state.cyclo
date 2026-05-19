@@ -1,16 +1,25 @@
-../Core/Src/App/System_state/system_state.cpp:19:6:static void system_state::SystemState::init()	1
-../Core/Src/App/System_state/system_state.cpp:29:6:static void system_state::SystemState::setMotorCommand(const system_state::MotorCommand&)	1
-../Core/Src/App/System_state/system_state.cpp:34:14:static system_state::MotorCommand system_state::SystemState::getMotorCommand()	1
-../Core/Src/App/System_state/system_state.cpp:39:6:static void system_state::SystemState::setMotorFeedback(const system_state::MotorFeedback&)	1
-../Core/Src/App/System_state/system_state.cpp:44:15:static system_state::MotorFeedback system_state::SystemState::getMotorFeedback()	1
-../Core/Src/App/System_state/system_state.cpp:49:6:static void system_state::SystemState::setBatteryState(const system_state::BatteryState&)	1
-../Core/Src/App/System_state/system_state.cpp:54:14:static system_state::BatteryState system_state::SystemState::getBatteryState()	1
-../Core/Src/App/System_state/system_state.cpp:59:6:static void system_state::SystemState::setSensorState(const system_state::SensorState&)	1
-../Core/Src/App/System_state/system_state.cpp:64:13:static system_state::SensorState system_state::SystemState::getSensorState()	1
-../Core/Src/App/System_state/system_state.cpp:69:6:static void system_state::SystemState::setUserInputState(const system_state::UserInputState&)	1
-../Core/Src/App/System_state/system_state.cpp:74:16:static system_state::UserInputState system_state::SystemState::getUserInputState()	1
-../Core/Src/App/System_state/system_state.cpp:79:6:static void system_state::SystemState::setJetsonState(const system_state::JetsonState&)	1
-../Core/Src/App/System_state/system_state.cpp:84:13:static system_state::JetsonState system_state::SystemState::getJetsonState()	1
-../Core/Src/App/System_state/system_state.cpp:89:6:static void system_state::SystemState::updateJetsonRxTick(uint32_t)	1
-../Core/Src/App/System_state/system_state.cpp:94:6:static void system_state::SystemState::updateJetsonTxTick(uint32_t)	1
-../Core/Src/App/System_state/system_state.cpp:99:6:static void system_state::SystemState::setJetsonConnected(bool)	1
+../Core/Src/App/System_state/system_state.cpp:20:6:static void system_state::SystemState::init()	1
+../Core/Src/App/System_state/system_state.cpp:33:6:static void system_state::SystemState::setMotorCommand(const system_state::MotorCommand&)	1
+../Core/Src/App/System_state/system_state.cpp:38:14:static system_state::MotorCommand system_state::SystemState::getMotorCommand()	1
+../Core/Src/App/System_state/system_state.cpp:43:6:static void system_state::SystemState::setMotorCommandValid(bool)	1
+../Core/Src/App/System_state/system_state.cpp:50:6:static void system_state::SystemState::setMotorFeedback(const system_state::MotorFeedback&)	1
+../Core/Src/App/System_state/system_state.cpp:55:15:static system_state::MotorFeedback system_state::SystemState::getMotorFeedback()	1
+../Core/Src/App/System_state/system_state.cpp:60:6:static void system_state::SystemState::setLeftMotorSpeed(float)	1
+../Core/Src/App/System_state/system_state.cpp:65:6:static void system_state::SystemState::setRightMotorSpeed(float)	1
+../Core/Src/App/System_state/system_state.cpp:70:6:static void system_state::SystemState::setLeftMotorFault(bool)	1
+../Core/Src/App/System_state/system_state.cpp:75:6:static void system_state::SystemState::setRightMotorFault(bool)	1
+../Core/Src/App/System_state/system_state.cpp:82:6:static void system_state::SystemState::setBatteryState(const system_state::BatteryState&)	1
+../Core/Src/App/System_state/system_state.cpp:87:14:static system_state::BatteryState system_state::SystemState::getBatteryState()	1
+../Core/Src/App/System_state/system_state.cpp:92:6:static void system_state::SystemState::requestResetCapacityToFull()	1
+../Core/Src/App/System_state/system_state.cpp:97:6:static void system_state::SystemState::clearResetCapacityToFullRequest()	1
+../Core/Src/App/System_state/system_state.cpp:104:6:static void system_state::SystemState::setSensorState(const system_state::SensorState&)	1
+../Core/Src/App/System_state/system_state.cpp:109:13:static system_state::SensorState system_state::SystemState::getSensorState()	1
+../Core/Src/App/System_state/system_state.cpp:116:6:static void system_state::SystemState::setUserInputState(const system_state::UserInputState&)	1
+../Core/Src/App/System_state/system_state.cpp:121:16:static system_state::UserInputState system_state::SystemState::getUserInputState()	1
+../Core/Src/App/System_state/system_state.cpp:128:6:static void system_state::SystemState::setJetsonState(const system_state::JetsonState&)	1
+../Core/Src/App/System_state/system_state.cpp:133:13:static system_state::JetsonState system_state::SystemState::getJetsonState()	1
+../Core/Src/App/System_state/system_state.cpp:138:6:static void system_state::SystemState::updateJetsonRxTick(uint32_t)	1
+../Core/Src/App/System_state/system_state.cpp:143:6:static void system_state::SystemState::updateJetsonTxTick(uint32_t)	1
+../Core/Src/App/System_state/system_state.cpp:148:6:static void system_state::SystemState::setJetsonConnected(bool)	1
+../Core/Src/App/System_state/system_state.cpp:155:6:static void system_state::SystemState::setControlClusterState(const system_state::ControlClusterState&)	1
+../Core/Src/App/System_state/system_state.cpp:160:21:static system_state::ControlClusterState system_state::SystemState::getControlClusterState()	1

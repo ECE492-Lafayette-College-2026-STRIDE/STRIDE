@@ -1,271 +1,107 @@
 /*
- * Motor_run.cpp
+ * motor_run.cpp
  *
  *  Created on: Mar 4, 2026
  *      Author: otienom
+ *
+ *  Purpose:
+ *  Motor runner for STRIDE.
+ *
+ *  This file does not create motor commands.
+ *  It only runs motor objects so they can:
+ *  - Pull commands from SystemState
+ *  - Apply commands to motor hardware
+ *  - Read motor feedback
+ *  - Push feedback back to SystemState
  */
 
+#include "Motor_run.hpp"
 #include "Motors.hpp"
 #include "main.h"
+#include "tim.h"
 #include <cstdint>
 
 namespace motors {
 
-static Motors left_(Motors::Channel::Left);
-static Motors right_(Motors::Channel::Right);
+// Motor objects are created here.
+// They represent physical motor channels.
+static Motors leftMotor_(Motors::Channel::Left);
+static Motors rightMotor_(Motors::Channel::Right);
 
-static std::uint32_t start_ms_ = 0;
-static bool started_ = false;
+static bool initialized_ = false;
 
-void Motors::initRunner()
+// TIM15 is on APB2. From your current clock tree, APB2 is not divided,
+// so TIM15 counter clock is 64 MHz when Prescaler = 0.
+static constexpr std::uint32_t RIGHT_TACH_TIMER_CLOCK_HZ = 64000000U;
+
+void RunMotors_Init()
 {
-    (void)Motors::init();
+  /*
+   * Initialize shared motor hardware.
+   *
+   * This starts DAC channels and forces DAC outputs to 0 V through Motors::init().
+   * It does not write commands to SystemState.
+   */
+  (void)Motors::init();
 
-    // Safe startup state
-    left_.writeMotor(0.0f);
-    right_.writeMotor(0.0f);
+  /*
+   * Start right tach input capture interrupt.
+   *
+   * Right tach:
+   * PE6 -> TIM15_CH2
+   */
+  (void)HAL_TIM_IC_Start_IT(&htim15, TIM_CHANNEL_2);
 
-    left_.setDirection(false);
-    right_.setDirection(false);
-
-    left_.setBrake(true);
-    right_.setBrake(true);
-
-    left_.setEnable(false);
-    right_.setEnable(false);
-
-    start_ms_ = HAL_GetTick();
-    started_ = true;
+  initialized_ = true;
 }
 
-void Motors::tick_Motors()
+void RunMotors_Tick()
 {
-    if (!started_) {
-        return;
-    }
+  if (!initialized_) {
+    return;
+  }
 
-    //const std::uint32_t elapsed = HAL_GetTick() - start_ms_;
+  /*
+   * Each motor object:
+   * - Pulls its own command from SystemState
+   * - Applies DAC/GPIO outputs
+   * - Reads fault GPIO
+   * - Pushes fault feedback to SystemState
+   */
+  leftMotor_.tick();
+  rightMotor_.tick();
+}
 
-    // Hold safe idle state for first 2 seconds
-//    if (elapsed < 2000U) {
-//
-//        left_.writeMotor(0.0f);
-//        right_.writeMotor(0.0f);
-//
-//        left_.setEnable(false);
-//        right_.setEnable(false);
-//
-//        left_.setBrake(true);
-//        right_.setBrake(true);
-//
-//        return;
-//    }
+void RunMotors_RightTachCapture(TIM_HandleTypeDef* htim,
+                                std::uint32_t timerChannel,
+                                std::uint32_t timerClockHz)
+{
+  if (!initialized_) {
+    return;
+  }
 
-    // Simple movement test
-   left_.setDirection(true);
-    right_.setDirection(true);
-
-    left_.setBrake(false);
-    right_.setBrake(false);
-
-    left_.setEnable(false);
-    right_.setEnable(false);
-
-   left_.writeMotor(0.5f);
-    right_.writeMotor(0.5f);
+  /*
+   * Right tach only for now.
+   *
+   * This reads the timer input-capture value inside the motor driver,
+   * calculates measured speed in mph, and pushes it to SystemState.
+   */
+  rightMotor_.readTachSpeedAndPushToSystemState(
+      htim,
+      timerChannel,
+      timerClockHz);
 }
 
 } // namespace motors
 
-
-
-
-
-
-
-
-
-
-
-
-///*
-// * Motor_run.cpp
-// *
-// *  Created on: Mar 4, 2026
-// *      Author: otienom
-// */
-//
-//#include "Motors.hpp"
-//#include "main.h"
-//#include <cstdint>
-//
-//namespace motors {
-//
-//enum class RunState : std::uint8_t {
-//    Default,
-//    Enable,
-//    Drive,
-//    Fault
-//};
-//
-//static Motors left_(Motors::Channel::Left);
-//static Motors right_(Motors::Channel::Right);
-//
-//static RunState state_ = RunState::Default;
-//
-////// cached requested values
-////static bool enable_ = false;
-////static bool brake_ = true;
-////static bool direction_ = false;
-////static std::uint32_t speed_mph_ = 0;
-//
-//static std::uint32_t state_enter_ms_ = 0;
-//static constexpr std::uint32_t STATE_DWELL_MS = 5000;
-//
-//static inline void enterState(RunState new_state)
-//{
-//    state_ = new_state;
-//    state_enter_ms_ = HAL_GetTick();
-//}
-//
-//static inline bool stateElapsed(std::uint32_t dwell_ms)
-//{
-//    return (HAL_GetTick() - state_enter_ms_) >= dwell_ms;
-//}
-//
-//
-//
-//void motors::Motors::initRunner()
-//{
-//    (void)Motors::init();
-//
-//    left_.setEnable(true);
-//    right_.setEnable(true);
-//
-//    left_.setBrake(false);
-//    right_.setBrake(false);
-//
-//    left_.setDirection(false);
-//    right_.setDirection(false);
-//
-//    left_.writeMotor(1.0f);
-//     right_.writeMotor(1.0f);
-//
-//   enterState(RunState::Default);
-//}
-//
-//void motors::Motors::tick_Motors()
-//{
-//    (void)left_.readFault();
-//    (void)right_.readFault();
-//
-//    if (left_.faultCached() & right_.faultCached()) {
-//        enterState(RunState::Fault);
-//    }
-//
-//    switch (state_) {
-//    case RunState::Default:
-//    {
-//
-//
-//    	 left_.setEnable(true);
-//    	  right_.setEnable(true);
-//
-//    	    left_.setBrake(false);
-//    	    right_.setBrake(false);
-//
-//    	    left_.setDirection(false);
-//    	    right_.setDirection(false);
-//
-//    	    left_.writeMotor(1.0f);
-//    	     right_.writeMotor(1.0f);
-//
-//        // only leave default if enable request is true
-//        if (!left_.enableCached() && !right_.enableCached() && stateElapsed(STATE_DWELL_MS*6)) {
-//            enterState(RunState::Enable);
-//        }
-//        break;
-//    }
-//
-//    case RunState::Enable:
-//    {
-//    	 left_.setEnable(true);
-//    	    right_.setEnable(true);
-//
-//    	    left_.setBrake(false);
-//    	    right_.setBrake(false);
-//
-//    	    left_.setDirection(false);
-//    	    right_.setDirection(false);
-//
-//    	    left_.writeMotor(1.0f);
-//    	     right_.writeMotor(1.0f);
-//
-//        // if command no longer valid, go back to default
-//        if (!left_.enableCached() && !right_.enableCached()) {
-//            enterState(RunState::Default);
-//        }
-//        // after 5 s, only go to Drive if brake request is false
-//        else if (!left_.brakeCached() && !right_.brakeCached()&& stateElapsed(STATE_DWELL_MS*6)) {
-//            enterState(RunState::Drive);
-//        }
-//        break;
-//    }
-//
-//    case RunState::Drive:
-//    {
-//    left_.setEnable(true);
-//    right_.setEnable(true);
-//
-//    left_.setBrake(false);
-//    right_.setBrake(false);
-//
-//    left_.setDirection(false);
-//    right_.setDirection(false);
-//
-//    left_.writeMotor(1.0f);
-//    right_.writeMotor(1.0f);
-//        //left_.writeMotor(left_.speedToVolts(left_.commandedSpeedCached()));
-//      //  right_.writeMotor(right_.speedToVolts(right_.commandedSpeedCached()));
-//
-//        // if enable becomes false, go safe
-//        if (!left_.enableCached() || !right_.enableCached() ) {
-//            enterState(RunState::Default);
-//        }
-//        // if brake becomes true, return to enable state
-//        else if (left_.brakeCached() || right_.brakeCached()) {
-//            enterState(RunState::Enable);
-//        }
-//        break;
-//    }
-//
-//    case RunState::Fault:
-//    {
-//    	 left_.setEnable(true);
-//    	  right_.setEnable(true);
-//
-//    	 left_.setBrake(false);
-//    	 right_.setBrake(false);
-//
-//         left_.setDirection(false);
-//    	  right_.setDirection(false);
-//
-//    	 left_.writeMotor(1.0f);
-//         right_.writeMotor(1.0f);
-//
-//        //(void)left_.readFault();
-//      //  (void)right_.readFault();
-//
-//        if (!left_.faultCached() && !right_.faultCached()) {
-//           enterState(RunState::Default);
-//        }
-//        break;
-//    }
-//
-//    default:
-//        enterState(RunState::Fault);
-//        break;
-//    }
-//}
-//
-//} // namespace motors
+extern "C" void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef* htim)
+{
+  if (htim->Instance == TIM15 &&
+      htim->Channel == HAL_TIM_ACTIVE_CHANNEL_2)
+  {
+    motors::RunMotors_RightTachCapture(
+        htim,
+        TIM_CHANNEL_2,
+        motors::RIGHT_TACH_TIMER_CLOCK_HZ);
+  }
+}

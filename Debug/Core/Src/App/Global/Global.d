@@ -29,14 +29,21 @@ Core/Src/App/Global/Global.o: ../Core/Src/App/Global/Global.cpp \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h \
+ ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h \
+ ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h \
  ../Drivers/BSP/STM32H7xx_Nucleo/stm32h7xx_nucleo.h \
  ../Core/Inc/stm32h7xx_nucleo_conf.h \
  ../Drivers/BSP/STM32H7xx_Nucleo/stm32h7xx_nucleo_errno.h \
  ../Core/Src/App/Global/Global.h \
+ ../Core/Src/App/Global/../System_State/System_state.hpp \
+ ../Core/Src/App/Global/../System_State/System_state_debug.hpp \
  ../Core/Src/App/Global/../Battery_Monitor/Battery_status.hpp \
- ../Core/Src/App/Global/../Motor_control/Motors.hpp
+ ../Core/Src/App/Global/../Motor_control/Motor_run.hpp \
+ ../Core/Src/App/Global/../Jetson/run_jetson.hpp \
+ ../Core/Src/App/Global/../Ultrasonic_Sensors/run_ultrasonic.hpp \
+ ../Core/Src/App/Global/../Control_cluster/run_control_cluster.hpp
 ../Core/Inc/main.h:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h:
 ../Core/Inc/stm32h7xx_hal_conf.h:
@@ -68,11 +75,18 @@ Core/Src/App/Global/Global.o: ../Core/Src/App/Global/Global.cpp \
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_i2c_ex.h:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr.h:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pwr_ex.h:
+../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim.h:
+../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_tim_ex.h:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h:
 ../Drivers/BSP/STM32H7xx_Nucleo/stm32h7xx_nucleo.h:
 ../Core/Inc/stm32h7xx_nucleo_conf.h:
 ../Drivers/BSP/STM32H7xx_Nucleo/stm32h7xx_nucleo_errno.h:
 ../Core/Src/App/Global/Global.h:
+../Core/Src/App/Global/../System_State/System_state.hpp:
+../Core/Src/App/Global/../System_State/System_state_debug.hpp:
 ../Core/Src/App/Global/../Battery_Monitor/Battery_status.hpp:
-../Core/Src/App/Global/../Motor_control/Motors.hpp:
+../Core/Src/App/Global/../Motor_control/Motor_run.hpp:
+../Core/Src/App/Global/../Jetson/run_jetson.hpp:
+../Core/Src/App/Global/../Ultrasonic_Sensors/run_ultrasonic.hpp:
+../Core/Src/App/Global/../Control_cluster/run_control_cluster.hpp:

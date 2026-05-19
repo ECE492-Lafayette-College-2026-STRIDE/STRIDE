@@ -5,16 +5,16 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
-../Core/Src/App/Motor_control/Motor_run.cpp \
-../Core/Src/App/Motor_control/Motors.cpp 
+../Core/Src/App/Motor_control/Motors.cpp \
+../Core/Src/App/Motor_control/motor_run.cpp 
 
 OBJS += \
-./Core/Src/App/Motor_control/Motor_run.o \
-./Core/Src/App/Motor_control/Motors.o 
+./Core/Src/App/Motor_control/Motors.o \
+./Core/Src/App/Motor_control/motor_run.o 
 
 CPP_DEPS += \
-./Core/Src/App/Motor_control/Motor_run.d \
-./Core/Src/App/Motor_control/Motors.d 
+./Core/Src/App/Motor_control/Motors.d \
+./Core/Src/App/Motor_control/motor_run.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -24,7 +24,7 @@ Core/Src/App/Motor_control/%.o Core/Src/App/Motor_control/%.su Core/Src/App/Moto
 clean: clean-Core-2f-Src-2f-App-2f-Motor_control
 
 clean-Core-2f-Src-2f-App-2f-Motor_control:
-	-$(RM) ./Core/Src/App/Motor_control/Motor_run.cyclo ./Core/Src/App/Motor_control/Motor_run.d ./Core/Src/App/Motor_control/Motor_run.o ./Core/Src/App/Motor_control/Motor_run.su ./Core/Src/App/Motor_control/Motors.cyclo ./Core/Src/App/Motor_control/Motors.d ./Core/Src/App/Motor_control/Motors.o ./Core/Src/App/Motor_control/Motors.su
+	-$(RM) ./Core/Src/App/Motor_control/Motors.cyclo ./Core/Src/App/Motor_control/Motors.d ./Core/Src/App/Motor_control/Motors.o ./Core/Src/App/Motor_control/Motors.su ./Core/Src/App/Motor_control/motor_run.cyclo ./Core/Src/App/Motor_control/motor_run.d ./Core/Src/App/Motor_control/motor_run.o ./Core/Src/App/Motor_control/motor_run.su
 
 .PHONY: clean-Core-2f-Src-2f-App-2f-Motor_control
 

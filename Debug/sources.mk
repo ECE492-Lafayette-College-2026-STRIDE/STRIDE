@@ -39,11 +39,13 @@ CPP_DEPS :=
 # Every subdirectory with source files must be described here
 SUBDIRS := \
 Core/Src/App/Battery_Monitor \
+Core/Src/App/Control_cluster \
 Core/Src/App/Flash_state \
 Core/Src/App/Global \
 Core/Src/App/Jetson \
 Core/Src/App/Motor_control \
 Core/Src/App/System_state \
+Core/Src/App/Ultrasonic_sensors \
 Core/Src/App/User_brakes \
 Core/Src \
 Core/Startup \

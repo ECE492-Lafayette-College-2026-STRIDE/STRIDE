@@ -13,11 +13,13 @@ RM := rm -rf
 -include Drivers/BSP/STM32H7xx_Nucleo/subdir.mk
 -include Core/Startup/subdir.mk
 -include Core/Src/App/User_brakes/subdir.mk
+-include Core/Src/App/Ultrasonic_sensors/subdir.mk
 -include Core/Src/App/System_state/subdir.mk
 -include Core/Src/App/Motor_control/subdir.mk
 -include Core/Src/App/Jetson/subdir.mk
 -include Core/Src/App/Global/subdir.mk
 -include Core/Src/App/Flash_state/subdir.mk
+-include Core/Src/App/Control_cluster/subdir.mk
 -include Core/Src/App/Battery_Monitor/subdir.mk
 -include Core/Src/subdir.mk
 -include objects.mk
@@ -93,7 +95,7 @@ main-build: STRIDE.elf secondary-outputs
 
 # Tool invocations
 STRIDE.elf STRIDE.map: $(OBJS) $(USER_OBJS) C:\Users\otienom\Documents\Senior\ design\Source\ Code\STRIDE\STM32H7A3ZITXQ_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-g++ -o "STRIDE.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"C:\Users\otienom\Documents\Senior design\Source Code\STRIDE\STM32H7A3ZITXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="STRIDE.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+	arm-none-eabi-g++ -o "STRIDE.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"C:\Users\otienom\Documents\Senior design\Source Code\STRIDE\STM32H7A3ZITXQ_FLASH.ld" --specs=nosys.specs -Wl,-Map="STRIDE.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

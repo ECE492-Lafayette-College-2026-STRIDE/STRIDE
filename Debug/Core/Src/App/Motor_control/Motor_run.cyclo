@@ -1,4 +1,6 @@
-../Core/Src/App/Motor_control/Motor_run.cpp:20:6:static void motors::Motors::initRunner()	1
-../Core/Src/App/Motor_control/Motor_run.cpp:41:6:static void motors::Motors::tick_Motors()	2
-../Core/Src/App/Motor_control/Motor_run.cpp:78:1:void __static_initialization_and_destruction_0()	1
-../Core/Src/App/Motor_control/Motor_run.cpp:78:1:cpp)	1
+../Core/Src/App/Motor_control/motor_run.cpp:37:6:void motors::RunMotors_Init()	1
+../Core/Src/App/Motor_control/motor_run.cpp:58:6:void motors::RunMotors_Tick()	2
+../Core/Src/App/Motor_control/motor_run.cpp:75:6:void motors::RunMotors_RightTachCapture(TIM_HandleTypeDef*, uint32_t, uint32_t)	2
+../Core/Src/App/Motor_control/motor_run.cpp:97:17:void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef*)	3
+../Core/Src/App/Motor_control/motor_run.cpp:107:1:void __static_initialization_and_destruction_0()	1
+../Core/Src/App/Motor_control/motor_run.cpp:107:1:cpp)	1

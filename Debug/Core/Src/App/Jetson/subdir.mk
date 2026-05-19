@@ -5,13 +5,16 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
-../Core/Src/App/Jetson/jetson.cpp 
+../Core/Src/App/Jetson/jetson.cpp \
+../Core/Src/App/Jetson/run_jetson.cpp 
 
 OBJS += \
-./Core/Src/App/Jetson/jetson.o 
+./Core/Src/App/Jetson/jetson.o \
+./Core/Src/App/Jetson/run_jetson.o 
 
 CPP_DEPS += \
-./Core/Src/App/Jetson/jetson.d 
+./Core/Src/App/Jetson/jetson.d \
+./Core/Src/App/Jetson/run_jetson.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -21,7 +24,7 @@ Core/Src/App/Jetson/%.o Core/Src/App/Jetson/%.su Core/Src/App/Jetson/%.cyclo: ..
 clean: clean-Core-2f-Src-2f-App-2f-Jetson
 
 clean-Core-2f-Src-2f-App-2f-Jetson:
-	-$(RM) ./Core/Src/App/Jetson/jetson.cyclo ./Core/Src/App/Jetson/jetson.d ./Core/Src/App/Jetson/jetson.o ./Core/Src/App/Jetson/jetson.su
+	-$(RM) ./Core/Src/App/Jetson/jetson.cyclo ./Core/Src/App/Jetson/jetson.d ./Core/Src/App/Jetson/jetson.o ./Core/Src/App/Jetson/jetson.su ./Core/Src/App/Jetson/run_jetson.cyclo ./Core/Src/App/Jetson/run_jetson.d ./Core/Src/App/Jetson/run_jetson.o ./Core/Src/App/Jetson/run_jetson.su
 
 .PHONY: clean-Core-2f-Src-2f-App-2f-Jetson
 

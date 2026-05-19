@@ -1,25 +1,26 @@
-../Core/Src/App/Motor_control/Motors.cpp:9:29:uint32_t motors::dacChannelFor(Motors::Channel)	16	static
-../Core/Src/App/Motor_control/Motors.cpp:12:29:GPIO_TypeDef* motors::enablePortFor(Motors::Channel)	16	static
-../Core/Src/App/Motor_control/Motors.cpp:15:29:uint16_t motors::enablePinFor(Motors::Channel)	16	static
-../Core/Src/App/Motor_control/Motors.cpp:19:29:GPIO_TypeDef* motors::brakePortFor(Motors::Channel)	16	static
-../Core/Src/App/Motor_control/Motors.cpp:22:29:uint16_t motors::brakePinFor(Motors::Channel)	16	static
-../Core/Src/App/Motor_control/Motors.cpp:26:29:GPIO_TypeDef* motors::directionPortFor(Motors::Channel)	16	static
-../Core/Src/App/Motor_control/Motors.cpp:29:29:uint16_t motors::directionPinFor(Motors::Channel)	16	static
-../Core/Src/App/Motor_control/Motors.cpp:33:29:GPIO_TypeDef* motors::faultPortFor(Motors::Channel)	16	static
-../Core/Src/App/Motor_control/Motors.cpp:36:29:uint16_t motors::faultPinFor(Motors::Channel)	16	static
-../Core/Src/App/Motor_control/Motors.cpp:41:1:motors::Motors::Motors(Channel)	16	static
-../Core/Src/App/Motor_control/Motors.cpp:43:6:static bool motors::Motors::init()	8	static
-../Core/Src/App/Motor_control/Motors.cpp:53:15:static uint16_t motors::Motors::voltsToCode(float)	24	static
-../Core/Src/App/Motor_control/Motors.cpp:60:6:bool motors::Motors::writeRaw(uint16_t)	24	static
-../Core/Src/App/Motor_control/Motors.cpp:72:6:bool motors::Motors::writeMotor(float)	16	static
-../Core/Src/App/Motor_control/Motors.cpp:78:6:bool motors::Motors::setEnable(bool)	24	static
-../Core/Src/App/Motor_control/Motors.cpp:87:6:bool motors::Motors::setBrake(bool)	24	static
-../Core/Src/App/Motor_control/Motors.cpp:94:6:bool motors::Motors::setDirection(bool)	24	static
-../Core/Src/App/Motor_control/Motors.cpp:101:6:bool motors::Motors::readFault() const	32	static
-../Core/Src/App/Motor_control/Motors.cpp:109:7:float motors::Motors::speedToVolts(uint32_t) const	24	static
-../Core/Src/App/Motor_control/Motors.cpp:117:6:void motors::Motors::setSpeed(uint32_t)	16	static
-../Core/Src/App/Motor_control/Motors.cpp:122:15:uint32_t motors::Motors::commandedSpeedCached() const	16	static
-../Core/Src/App/Motor_control/Motors.cpp:123:6:bool motors::Motors::enableCached() const	16	static
-../Core/Src/App/Motor_control/Motors.cpp:124:6:bool motors::Motors::brakeCached() const	16	static
-../Core/Src/App/Motor_control/Motors.cpp:125:6:bool motors::Motors::directionCached() const	16	static
-../Core/Src/App/Motor_control/Motors.cpp:126:6:bool motors::Motors::faultCached() const	16	static
+../Core/Src/App/Motor_control/Motors.cpp:16:29:uint32_t motors::dacChannelFor(Motors::Channel)	16	static
+../Core/Src/App/Motor_control/Motors.cpp:20:29:GPIO_TypeDef* motors::enablePortFor(Motors::Channel)	16	static
+../Core/Src/App/Motor_control/Motors.cpp:24:29:uint16_t motors::enablePinFor(Motors::Channel)	16	static
+../Core/Src/App/Motor_control/Motors.cpp:28:29:GPIO_TypeDef* motors::brakePortFor(Motors::Channel)	16	static
+../Core/Src/App/Motor_control/Motors.cpp:32:29:uint16_t motors::brakePinFor(Motors::Channel)	16	static
+../Core/Src/App/Motor_control/Motors.cpp:36:29:GPIO_TypeDef* motors::directionPortFor(Motors::Channel)	16	static
+../Core/Src/App/Motor_control/Motors.cpp:40:29:uint16_t motors::directionPinFor(Motors::Channel)	16	static
+../Core/Src/App/Motor_control/Motors.cpp:44:29:GPIO_TypeDef* motors::faultPortFor(Motors::Channel)	16	static
+../Core/Src/App/Motor_control/Motors.cpp:48:29:uint16_t motors::faultPinFor(Motors::Channel)	16	static
+../Core/Src/App/Motor_control/Motors.cpp:53:1:motors::Motors::Motors(Channel)	16	static
+../Core/Src/App/Motor_control/Motors.cpp:55:6:static bool motors::Motors::init()	8	static
+C:\ST\STM32CubeIDE_1.19.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344\tools\bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/include/c++/13.3.1/bits/stl_algobase.h:233:5:constexpr const _Tp& std::min(const _Tp&, const _Tp&) [with _Tp = float]	16	static
+../Core/Src/App/Motor_control/Motors.cpp:65:15:static uint16_t motors::Motors::voltsToCode(float)	32	static
+../Core/Src/App/Motor_control/Motors.cpp:75:6:bool motors::Motors::writeRaw(uint16_t)	24	static
+../Core/Src/App/Motor_control/Motors.cpp:87:6:bool motors::Motors::writeMotor(float)	16	static
+../Core/Src/App/Motor_control/Motors.cpp:91:7:float motors::Motors::speedToVolts(float) const	24	static
+../Core/Src/App/Motor_control/Motors.cpp:103:6:bool motors::Motors::setEnable(bool)	24	static
+../Core/Src/App/Motor_control/Motors.cpp:111:6:bool motors::Motors::setBrake(bool)	24	static
+../Core/Src/App/Motor_control/Motors.cpp:118:6:bool motors::Motors::setDirection(bool)	24	static
+../Core/Src/App/Motor_control/Motors.cpp:125:6:bool motors::Motors::readFault() const	32	static
+../Core/Src/App/Motor_control/Motors.cpp:133:6:void motors::Motors::tick()	24	static
+../Core/Src/App/Motor_control/Motors.cpp:141:7:float motors::Motors::readTachSpeedAndPushToSystemState(TIM_HandleTypeDef*, uint32_t, uint32_t)	64	static
+../Core/Src/App/Motor_control/Motors.cpp:210:6:void motors::Motors::applyCommandsFromSystemState()	48	static
+../Core/Src/App/Motor_control/Motors.cpp:247:6:void motors::Motors::publishMeasuredSpeedToSystemState(float) const	16	static
+../Core/Src/App/Motor_control/Motors.cpp:256:6:void motors::Motors::publishFaultToSystemState(bool) const	16	static
+C:\ST\STM32CubeIDE_1.19.0\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344\tools\bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/include/c++/13.3.1/bits/stl_algobase.h:257:5:constexpr const _Tp& std::max(const _Tp&, const _Tp&) [with _Tp = float]	16	static

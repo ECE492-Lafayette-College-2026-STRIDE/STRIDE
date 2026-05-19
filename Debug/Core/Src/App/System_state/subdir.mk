@@ -5,13 +5,16 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
-../Core/Src/App/System_state/system_state.cpp 
+../Core/Src/App/System_state/system_state.cpp \
+../Core/Src/App/System_state/system_state_debug.cpp 
 
 OBJS += \
-./Core/Src/App/System_state/system_state.o 
+./Core/Src/App/System_state/system_state.o \
+./Core/Src/App/System_state/system_state_debug.o 
 
 CPP_DEPS += \
-./Core/Src/App/System_state/system_state.d 
+./Core/Src/App/System_state/system_state.d \
+./Core/Src/App/System_state/system_state_debug.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -21,7 +24,7 @@ Core/Src/App/System_state/%.o Core/Src/App/System_state/%.su Core/Src/App/System
 clean: clean-Core-2f-Src-2f-App-2f-System_state
 
 clean-Core-2f-Src-2f-App-2f-System_state:
-	-$(RM) ./Core/Src/App/System_state/system_state.cyclo ./Core/Src/App/System_state/system_state.d ./Core/Src/App/System_state/system_state.o ./Core/Src/App/System_state/system_state.su
+	-$(RM) ./Core/Src/App/System_state/system_state.cyclo ./Core/Src/App/System_state/system_state.d ./Core/Src/App/System_state/system_state.o ./Core/Src/App/System_state/system_state.su ./Core/Src/App/System_state/system_state_debug.cyclo ./Core/Src/App/System_state/system_state_debug.d ./Core/Src/App/System_state/system_state_debug.o ./Core/Src/App/System_state/system_state_debug.su
 
 .PHONY: clean-Core-2f-Src-2f-App-2f-System_state
 

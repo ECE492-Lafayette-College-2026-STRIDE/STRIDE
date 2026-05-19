@@ -20,6 +20,7 @@
 #include "main.h"
 #include "dac.h"
 #include "i2c.h"
+#include "tim.h"
 #include "usart.h"
 #include "gpio.h"
 
@@ -99,7 +100,9 @@ int main(void)
   MX_DAC1_Init();
   MX_I2C1_Init();
   MX_I2C2_Init();
-  MX_UART4_Init();
+  MX_USART1_UART_Init();
+  MX_TIM15_Init();
+  MX_USART6_UART_Init();
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
@@ -137,6 +140,7 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+
   while (1)
   {
 

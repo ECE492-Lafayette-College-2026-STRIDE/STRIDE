@@ -1,0 +1,3 @@
+../Core/Src/App/Control_cluster/run_control_cluster.cpp:32:22:control_cluster::ControlClusterConfig {anonymous}::makeConfig()	24	static
+../Core/Src/App/Control_cluster/run_control_cluster.cpp:89:6:void runControlClusterInit()	64	static
+../Core/Src/App/Control_cluster/run_control_cluster.cpp:98:6:void runControlClusterTick()	24	static
